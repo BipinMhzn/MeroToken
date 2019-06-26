@@ -1,0 +1,16 @@
+{
+	"name": "MeroToken",
+	"version": "1.0.0",
+	"description": "Mero Token Sale ICO",
+	"directories": {
+		"test": "test"
+	},
+	"scripts": {
+		"dev": "lite-server"
+	},
+	"author": "Bipin Sonish",
+	"license": "ISC",
+	"devDependencies": {
+		"lite-server": "^2.3.0"
+	}
+}
