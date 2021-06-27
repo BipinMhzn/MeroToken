@@ -1,98 +1,103 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Send Token</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <a class="navbar-brand" href="#">Mero Token</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="./index.html">Buy Token<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./sendToken.html">Send Token</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./allowance.html">Allowance Token</a>
-            </li>
-          </ul>
-        </div>
-    </nav>
 
-<div class="container-fluid">
+<head>
+  <title>Send Token</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <a class="navbar-brand" href="#">Mero Token</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html">Buy Token<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./sendToken.html">Send Token</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./allowance.html">Allowance Token</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
 
     <div class="row">
-        <div class="col-lg-6">
-            <h1 class="text-center">Send Token</h1>
-            <h3 class="text-center">You have <span class="black"><span class="dapp-balance"></span> TOKEN</span> in your account</h3>
-            <br>
-            
-            
-            <div id="loader">
-                <p class="text-center">Loading...</p>
-            </div>
+      <div class="col-lg-6">
+        <h1 class="text-center">Send Token</h1>
+        <h3 class="text-center">You have <span class="black"><span class="dapp-balance"></span> TOKEN</span> in your
+          account</h3>
+        <br>
 
 
-            <div id="content" style="display: none;">
-            <div class="row">
-                <div class="col">
-                    <div class="card card-default card-primary">
-                        <div class="card-header">Send Token</div>
-                        <div class="card-body">
-                            <form onsubmit="App.sendToken();return false;" role="form">
-                                <div class="form-group">
-                                    <label for="inputAmountSendToken">Amount in Token</label>
-                                    <input type="number" name="inputAmountSendToken" class="form-control"
-                                           id="inputAmountSendToken" placeholder="e.g., 95" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputBeneficiarySendToken">To (address)</label>
-                                    <input type="text" class="form-control" id="inputBeneficiarySendToken"
-                                           name="inputBeneficiarySendToken" placeholder="e.g. 0x123ABde44..." required>
-                                </div>
-                                <input type="submit" class="btn btn-primary" value="Send Token">
-                            </form>
-                        </div>
+        <div id="loader">
+          <p class="text-center">Loading...</p>
+        </div>
+
+
+        <div id="content" style="display: none;">
+          <div class="row">
+            <div class="col">
+              <div class="card card-default card-primary">
+                <div class="card-header">Send Token</div>
+                <div class="card-body">
+                  <form onsubmit="App.sendToken();return false;" role="form">
+                    <div class="form-group">
+                      <label for="inputAmountSendToken">Amount in Token</label>
+                      <input type="number" name="inputAmountSendToken" class="form-control" id="inputAmountSendToken"
+                        placeholder="e.g., 95" required>
                     </div>
-                </div>
-            </div>
-            <!-- endrow -->
-            
-            <br>
-        </div>
-        <!-- end content -->
-        </div>
-        <div class="col">
-                <div class="card card-default card-primary">
-                  <div class="card-header">
-                      <h3 class="text-center">Transaction Receipt</h3>
-                  </div>
-                  <div class="card-body">
-      
-                    <table id="receipt-table">
-                      <tbody class="receipt-table-body">
-                      </tbody>
-                    </table>
-                  </div>
+                    <div class="form-group">
+                      <label for="inputBeneficiarySendToken">To (address)</label>
+                      <input type="text" class="form-control" id="inputBeneficiarySendToken"
+                        name="inputBeneficiarySendToken" placeholder="e.g. 0x123ABde44..." required>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Send Token">
+                  </form>
                 </div>
               </div>
-        </div>
-</div>
+            </div>
+          </div>
+          <!-- endrow -->
 
-	 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/web3.min.js"></script>
-     <script src="js/truffle-contract.min.js"></script>
-     <script src="js/app.js"></script>
-     <script src="js/custom.js"></script>
+          <br>
+        </div>
+        <!-- end content -->
+      </div>
+      <div class="col">
+        <div class="card card-default card-primary">
+          <div class="card-header">
+            <h3 class="text-center">Transaction Receipt</h3>
+          </div>
+          <div class="card-body">
+
+            <table id="receipt-table">
+              <tbody class="receipt-table-body">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/custom.js"></script>
 
 </body>
+
 </html>
