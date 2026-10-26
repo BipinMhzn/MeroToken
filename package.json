@@ -6,11 +6,12 @@
 		"test": "test"
 	},
 	"scripts": {
-		"dev": "lite-server"
+		"dev": "node scripts/dev-server.cjs",
+		"test:server": "node --test scripts/dev-server.test.cjs"
 	},
 	"author": "Bipin Sonish",
 	"license": "ISC",
-	"devDependencies": {
-		"lite-server": "^2.3.0"
+	"engines": {
+		"node": ">=22"
 	}
 }
